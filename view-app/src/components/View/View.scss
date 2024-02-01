@@ -1,0 +1,27 @@
+@use "../../styles/mixins" as *;
+
+.view {
+  list-style: none;
+  cursor: pointer;
+
+  &__view {
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  &__thumbnail {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__play-modal {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

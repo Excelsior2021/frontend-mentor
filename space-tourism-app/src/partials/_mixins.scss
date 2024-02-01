@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Bellefair";
+  src: url("../assets/fonts/Bellefair-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../assets/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf");
+}
+
+@mixin bellefair {
+  font-family: "Bellefair";
+}
+
+@mixin barlow {
+  font-family: "Barlow Condensed";
+}
+
+@mixin page-layout-mobile($url) {
+  min-height: 100vh;
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 58px;
+}
+
+@mixin page-layout-tablet($url) {
+  background-image: url($url);
+  padding-bottom: 90px;
+}
+
+@mixin page-layout-desktop($url) {
+  background-image: url($url);
+  padding-bottom: 112px;
+}
+
+@mixin media-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (min-width: 1240px) {
+    @content;
+  }
+}
+
+@mixin max-width {
+  max-width: 1440px;
+  margin: auto;
+}

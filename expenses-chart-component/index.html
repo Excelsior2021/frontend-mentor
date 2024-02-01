@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./script.js" defer></script>
+    <title>Expenses chart component</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="balance">
+        <div class="balance__info">
+          <h2 class="balance__heading">My balance</h2>
+          <p class="balance__amount">$921.48</p>
+        </div>
+        <div class="balance__design-div">
+          <div class="balance__circle balance__circle--white"></div>
+          <div class="balance__circle balance__circle--black"></div>
+        </div>
+      </div>
+
+      <div class="spending">
+        <h2 class="spending__heading">Spending - Last 7 days</h2>
+
+        <div class="chart" id="chart"></div>
+
+        <div class="spending__summary">
+          <div class="spending__summary-left">
+            <h3 class="spending__label">Total this month</h3>
+            <p class="spending__amount">$478.33</p>
+          </div>
+          <div class="spending__summary-right">
+            <p class="spending__difference">+2.4%</p>
+            <h3 class="spending__label">from last month</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

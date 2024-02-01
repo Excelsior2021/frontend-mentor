@@ -1,0 +1,327 @@
+@use "./styles/globals";
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 28px 16px 32px 16px;
+
+  @include media-desktop {
+    margin: 89px 24px 55px 24px;
+
+    @include media-max;
+  }
+
+  &__logo {
+    width: 45px;
+
+    @include media-desktop {
+      width: 64px;
+    }
+  }
+
+  &__menu {
+    cursor: pointer;
+    @include media-desktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include media-desktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    text-transform: capitalize;
+    font-size: $paragraph;
+    list-style: none;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: $dark-greyish-blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $red-soft;
+    }
+  }
+}
+
+.main {
+  margin: auto 16px;
+
+  @include media-desktop {
+    margin: auto 24px;
+
+    @include media-max;
+  }
+
+  &__top-desktop {
+    @include media-desktop {
+      display: flex;
+    }
+  }
+}
+
+.section {
+  margin-bottom: 64px;
+
+  @include media-desktop {
+    margin-bottom: 72px;
+  }
+}
+
+.section-one {
+  @include media-desktop {
+    flex: 7;
+    margin-right: 30px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    @include media-desktop {
+      display: flex;
+    }
+  }
+
+  &__heading {
+    color: $dark-blue;
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    line-height: 0.95;
+
+    @include media-desktop {
+      flex: 1;
+      font-size: 56px;
+      font-weight: 900;
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__aside {
+    @include media-desktop {
+      flex: 1;
+    }
+  }
+
+  &__text {
+    color: $dark-greyish-blue;
+    font-size: $paragraph;
+    line-height: 1.5;
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    @include media-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    color: $white-off;
+    background-color: $red-soft;
+    letter-spacing: 4.38px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 185px;
+    height: 48px;
+    border: none;
+    margin-top: 24px;
+
+    &:hover {
+      background-color: $dark-blue;
+      cursor: pointer;
+    }
+  }
+}
+
+.section-two {
+  background-color: $dark-blue;
+  padding: 24px 20px;
+
+  @include media-desktop {
+    flex: 3;
+    padding: 32px 32px;
+  }
+
+  &__heading {
+    color: $orange-soft;
+    font-size: 32px;
+    margin-bottom: 35px;
+
+    @include media-desktop {
+      font-size: 40px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    color: $white-off;
+    text-decoration: none;
+
+    &:hover {
+      color: $orange-soft;
+    }
+  }
+
+  &__card {
+    height: 84px;
+    border-bottom: 1px solid $dark-greyish-blue;
+    margin-bottom: 31px;
+
+    @include media-desktop {
+      padding-bottom: 29px;
+    }
+
+    &--no-border {
+      border: none;
+      margin: 0;
+    }
+  }
+
+  &__card-heading {
+    color: $white-off;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  &__card-text {
+    color: $greyish-blue;
+    font-size: $paragraph;
+  }
+}
+
+.section-three {
+  margin-bottom: 75px;
+
+  &__list {
+    @include media-desktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    @include media-desktop {
+      width: 350px;
+      margin-right: 4px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    margin-bottom: 32px;
+  }
+
+  &__image {
+    width: 100px;
+    height: 130px;
+    margin-right: 24px;
+  }
+
+  &__number {
+    color: $greyish-blue;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  &__heading {
+    color: $dark-blue;
+    margin-bottom: 9px;
+  }
+
+  &__link {
+    color: $dark-blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $red-soft;
+    }
+  }
+
+  &__text {
+    font-size: $paragraph;
+    color: $dark-greyish-blue;
+  }
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  justify-content: end;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $dark-blue-modal;
+
+  &--show {
+    display: flex;
+
+    @include media-desktop {
+      display: none;
+    }
+  }
+
+  &__overlay {
+    position: relative;
+    background-color: $white-off;
+    width: 256px;
+    height: 100%;
+  }
+
+  &__close-menu {
+    position: absolute;
+    top: 27.3px;
+    right: 20.8px;
+    cursor: pointer;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 144px;
+    left: 24px;
+    width: 203px;
+  }
+
+  &__item {
+    text-transform: capitalize;
+    font-size: 18px;
+    list-style: none;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: $dark-blue;
+    text-decoration: none;
+  }
+}

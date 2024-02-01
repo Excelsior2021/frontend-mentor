@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card-1" id="card-1">
+      <img src="./images/icon-star.svg" alt="star" class="star">
+      <div class="content">
+        <h1>How did we do?</h1>
+        <p> Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!
+        </p>
+        <form>
+          <fieldset class="rating-container">
+            <input type="radio" name="rating" id="1" value="1"></input>
+            <label for="1" class="rating">1</label>
+            <input type="radio" name="rating" id="2" value="2"></input>
+            <label for="2" class="rating">2</label>
+            <input type="radio" name="rating" id="3" value="3"></input>
+            <label for="3" class="rating">3</label>
+            <input type="radio" name="rating" id="4" value="4"></input>
+            <label for="4" class="rating">4</label>
+            <input type="radio" name="rating" id="5" value="5"></input>
+            <label for="5" class="rating">5</label>
+          </fieldset>
+          <button class="submit" id="submit">submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="class-2 inactive" id="card-2">
+      <img src="./images/illustration-thank-you.svg" alt="thank-you" class="thank-you">
+      <p class="selected">You selected <span id="chosen"></span> out of 5</p>
+      <h1>Thank you!</h1>
+      <p>We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!
+      </p>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Jonathan Kila</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

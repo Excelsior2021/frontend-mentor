@@ -1,0 +1,245 @@
+@use "./partials/globals";
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+.container {
+  width: 343px;
+  min-width: fit-content;
+  margin: auto;
+  margin-top: 67px;
+
+  @include media-desktop {
+    width: 540px;
+    margin: 2% auto;
+  }
+}
+
+.balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: $soft-red;
+  border-radius: 10px;
+  margin: 16px;
+  padding: 20px;
+
+  @include media-desktop {
+    margin: auto;
+    margin-bottom: 24px;
+    padding: 26px 36px;
+  }
+
+  &__heading {
+    font-size: 15px;
+    font-weight: 100;
+    margin-bottom: 4px;
+
+    @include media-desktop {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__amount {
+    font-size: 24px;
+    font-weight: 700;
+
+    @include media-desktop {
+      font-size: 32px;
+    }
+  }
+
+  &__design-div {
+    position: relative;
+  }
+
+  &__circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    @include media-desktop {
+      width: 48px;
+      height: 48px;
+    }
+
+    &--white {
+      position: absolute;
+      right: 20px;
+      border: 2px solid white;
+
+      @include media-desktop {
+        right: 24px;
+      }
+    }
+
+    &--black {
+      background-color: black;
+    }
+  }
+}
+
+.spending {
+  color: $dark-brown;
+  background-color: $pale-orange;
+  min-width: fit-content;
+  border-radius: 10px;
+  margin: 16px;
+  margin-bottom: 67px;
+  padding: 20px;
+
+  @include media-desktop {
+    margin: auto;
+    padding: 40px;
+    padding-top: 32px;
+  }
+
+  &__heading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 52px;
+
+    @include media-desktop {
+      font-size: 32px;
+      margin-bottom: 66px;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    justify-content: space-between;
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
+    }
+  }
+
+  &__amount {
+    font-size: 30px;
+    font-weight: 700;
+
+    @include media-desktop {
+      font-size: 48px;
+    }
+  }
+
+  &__difference {
+    font-size: 15px;
+    font-weight: 700;
+
+    @include media-desktop {
+      font-size: 18px;
+    }
+  }
+
+  &__label {
+    color: $medium-brown;
+    font-size: 15px;
+    font-weight: 100;
+    margin-bottom: 4px;
+
+    @include media-desktop {
+      font-size: 18px;
+    }
+  }
+}
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  height: 210px;
+  border-bottom: 2px solid $cream;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+
+  @include media-desktop {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+  }
+
+  &__day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 33px;
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include media-desktop {
+      width: 50px;
+    }
+  }
+
+  &__bar-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 11px;
+  }
+
+  &__amount-div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $pale-orange;
+    background-color: $dark-brown;
+    font-weight: bold;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+
+    @include media-desktop {
+      width: 70px;
+      height: 40px;
+    }
+  }
+
+  &__amount {
+    color: $pale-orange;
+    font-size: 12px;
+
+    @include media-desktop {
+      font-size: 18px;
+    }
+  }
+
+  &__bar {
+    background-color: $soft-red;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $soft-red-hover;
+    }
+
+    &--max {
+      background-color: $cyan;
+
+      &:hover {
+        background-color: $cyan-hover;
+      }
+    }
+  }
+
+  &__label {
+    text-align: center;
+    font-size: 12px;
+    color: $medium-brown;
+
+    @include media-desktop {
+      font-size: 15px;
+    }
+  }
+}

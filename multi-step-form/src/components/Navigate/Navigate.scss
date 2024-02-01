@@ -1,0 +1,73 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.navigate {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  width: 100%;
+  height: 72px;
+  padding: 16px;
+  margin-top: 100px;
+
+  @include media-desktop {
+    position: static;
+    height: auto;
+    margin-top: auto;
+    padding: 0;
+  }
+
+  &__button {
+    font-family: "Ubuntu-Medium";
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include media-desktop {
+      font-size: 1.6rem;
+    }
+
+    &--prev {
+      background-color: transparent;
+      color: $cool-gray;
+      border: none;
+
+      &:hover {
+        color: $marine-blue;
+      }
+    }
+
+    &--next,
+    &--confirm {
+      color: $white;
+      border: none;
+      padding: 1rem;
+      margin-left: auto;
+
+      @include media-desktop {
+        padding: 1rem 2rem;
+      }
+    }
+
+    &--next {
+      background-color: $marine-blue;
+
+      &:hover {
+        background-color: #164a8a;
+      }
+    }
+
+    &--confirm {
+      background-color: $purplish-blue;
+
+      &:hover {
+        background-color: #928cff;
+      }
+    }
+  }
+}

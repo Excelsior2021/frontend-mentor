@@ -1,0 +1,21 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.form-header {
+  margin-bottom: 22px;
+
+  &__heading {
+    font-family: "Ubuntu-Bold";
+    font-size: 2.4rem;
+    color: $marine-blue;
+    margin-bottom: 8px;
+
+    @include media-desktop {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__description {
+    color: $cool-gray;
+  }
+}

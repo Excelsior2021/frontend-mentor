@@ -1,0 +1,292 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/fonts";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  font-size: 1.6rem;
+  font-family: "Plus-Jakarta-Sans-Extra-Bold";
+  background: linear-gradient(white, #f2f2f2);
+  margin: auto;
+}
+
+.max-width-hero {
+  position: relative;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  @include media-desktop {
+    max-width: $max-width-content;
+    margin: auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 16px;
+
+    @include media-tablet {
+      margin: 24px 40px;
+    }
+  }
+
+  &__button {
+    @include button;
+    background-color: $navy;
+    border-radius: 28px;
+    z-index: 10;
+
+    &:hover {
+      opacity: 1;
+      background-color: $purple;
+    }
+  }
+}
+
+.main {
+  margin: 16px;
+  overflow-x: hidden;
+
+  @include media-tablet {
+    margin: 24px 40px;
+  }
+
+  @include media-desktop {
+    max-width: $max-width-content;
+    margin: auto;
+    padding: 40px;
+  }
+
+  &__section {
+    @include media-tablet {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 150px;
+    }
+
+    @include media-desktop {
+      margin-top: 200px;
+    }
+  }
+}
+
+.hero {
+  @include media-desktop {
+    margin: auto;
+  }
+
+  &__content {
+    @include media-tablet {
+      width: 398px;
+      margin-top: 100px;
+    }
+
+    @include media-desktop {
+      width: 457px;
+    }
+  }
+
+  &__image-container {
+    @include media-tablet {
+      position: absolute;
+      top: -200px;
+      right: -300px;
+    }
+
+    @include media-desktop {
+      top: -260px;
+      right: -350px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
+
+  &__heading {
+    @include headingL;
+    color: $navy;
+    margin-bottom: 26px;
+
+    @include media-desktop {
+      @include headingXL;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include bodyS;
+    color: $grey;
+    margin-bottom: 24px;
+
+    @include media-desktop {
+      @include bodyM;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    @include bodyS;
+    @include orange-pink;
+    @include button;
+    @include buttonMod;
+    width: 167px;
+    height: 56px;
+    border-radius: 31.5px;
+    margin-bottom: 24px;
+
+    @include media-desktop {
+      @include bodyM;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 40px auto;
+  padding: 28px;
+  padding-bottom: 32px;
+  border-radius: 10px;
+
+  @include media-tablet {
+    width: 320px;
+    height: 260px;
+    margin: 40px 0;
+  }
+
+  @include media-desktop {
+    height: 322px;
+  }
+
+  &__section-heading {
+    @include headingS;
+    color: $white;
+
+    @include media-desktop {
+      @include headingM;
+    }
+  }
+
+  &--heading {
+    @include orange-pink;
+    height: 120px;
+    border-radius: 10px;
+    padding-top: 28px;
+    padding-left: 28px;
+    margin-bottom: 40px;
+
+    @include media-tablet {
+      width: 320px;
+      height: 260px;
+      margin: 40px 0;
+      padding-top: 56px;
+    }
+
+    @include media-desktop {
+      @include headingM;
+      height: 322px;
+      padding-top: 64px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: -24px;
+  }
+
+  &__heading {
+    color: $navy;
+    text-transform: capitalize;
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    @include media-desktop {
+      @include headingS;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    font-family: "Plus-Jakarta-Sans-Medium";
+    line-height: 26px;
+    color: $grey;
+    margin-bottom: 24px;
+
+    @include media-desktop {
+      @include bodyM;
+    }
+  }
+
+  &__link {
+    color: $dark-pink;
+    text-transform: capitalize;
+    text-decoration: none;
+    justify-self: end;
+    margin-top: auto;
+
+    &:hover {
+      color: $pink;
+    }
+
+    @include media-desktop {
+      font-size: 18px;
+    }
+  }
+}
+
+.footer {
+  background-color: $navy;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $max-width-content;
+    height: 120px;
+    margin: auto;
+    padding: 16px;
+
+    @include media-tablet {
+      padding: 40px;
+    }
+  }
+
+  &__button {
+    @include button;
+    @include purple-pink;
+    width: 140px;
+    height: 48px;
+    border-radius: 28px;
+  }
+}

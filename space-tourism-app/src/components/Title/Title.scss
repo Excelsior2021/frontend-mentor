@@ -1,0 +1,51 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+
+  @include media-tablet {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    justify-content: start;
+  }
+
+  &__index {
+    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2.7px;
+    color: $grey;
+    margin-right: 18px;
+
+    @include media-tablet {
+      font-size: 20px;
+      letter-spacing: 2.7px;
+    }
+
+    @include media-desktop {
+      font-size: 28px;
+      letter-spacing: 4.72px;
+    }
+  }
+
+  &__name {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3.8px;
+
+    @include media-tablet {
+      font-size: 20px;
+      letter-spacing: 3.8px;
+    }
+
+    @include media-desktop {
+      font-size: 28px;
+      letter-spacing: 4.72px;
+    }
+  }
+}

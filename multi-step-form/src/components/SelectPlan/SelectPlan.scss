@@ -1,0 +1,143 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.select-plan {
+  &__form {
+    @include media-desktop {
+      display: flex;
+      column-gap: 18px;
+    }
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background-color: transparent;
+    width: 100%;
+    height: 78px;
+    border: 1px solid $light-gray;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 0 16px;
+    cursor: pointer;
+
+    @include media-desktop {
+      flex-direction: column;
+      align-items: baseline;
+      height: auto;
+      margin-bottom: 0;
+      padding: 16px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      border-color: $purplish-blue;
+    }
+
+    &--active {
+      background-color: $magnolia;
+      border-color: $purplish-blue;
+    }
+  }
+
+  &__icon {
+    margin-right: 14px;
+
+    @include media-desktop {
+      margin-top: 4px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__name {
+    color: $marine-blue;
+    font-family: "Ubuntu-Medium";
+    text-transform: capitalize;
+    margin-bottom: 8px;
+
+    @include media-desktop {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__rate {
+    color: $cool-gray;
+    font-size: 1.4rem;
+  }
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  background-color: $magnolia;
+  border-radius: 8px;
+  margin-top: 24px;
+  padding: 14px 0;
+
+  @include media-desktop {
+    margin-top: 32px;
+  }
+
+  &__text {
+    font-family: "Ubuntu-Medium";
+    color: $marine-blue;
+    text-transform: capitalize;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+
+  &__input {
+    background-color: $marine-blue;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $marine-blue;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+  }
+
+  &__input:checked + &__slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+
+  &__round {
+    border-radius: 34px;
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}

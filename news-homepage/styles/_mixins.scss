@@ -1,0 +1,16 @@
+@mixin media-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-max {
+  @media (min-width: 1158px) {
+    max-width: 1158px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    @content;
+  }
+}

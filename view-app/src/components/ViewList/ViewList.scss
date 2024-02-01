@@ -1,0 +1,39 @@
+@use "../../styles/mixins" as *;
+
+.view-list {
+  &__heading {
+    @include headingM;
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    @include media-tablet {
+      @include headingL;
+      margin-bottom: 24px;
+    }
+
+    @include media-desktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__views {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+
+    @include media-tablet {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    @include media-desktop {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    @include media-desktop-plus {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 40px;
+    }
+  }
+}

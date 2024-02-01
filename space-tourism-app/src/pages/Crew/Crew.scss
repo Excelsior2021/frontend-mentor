@@ -1,0 +1,181 @@
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.crew {
+  @include page-layout-mobile("../../assets/crew/background-crew-mobile.jpg");
+
+  @include media-tablet {
+    @include page-layout-tablet("../../assets/crew/background-crew-tablet.jpg");
+    padding-bottom: 0;
+  }
+
+  @include media-desktop {
+    @include page-layout-desktop(
+      "../../assets/crew/background-crew-desktop.jpg"
+    );
+    padding-bottom: 0;
+  }
+
+  &__main {
+    @include max-width;
+    padding: 0 24px;
+
+    @include media-tablet {
+      padding: 0 39px;
+    }
+
+    @include media-desktop {
+      padding: 0 64px;
+    }
+  }
+
+  &__main-container {
+    @include media-tablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    @include media-desktop {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: start;
+    }
+  }
+
+  &__img-container {
+    border-bottom: 1px solid $grey;
+    margin-bottom: 32px;
+
+    @include media-tablet {
+      top: 492px;
+      bottom: 0;
+      margin: auto;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    @include media-desktop {
+      margin: 0;
+      margin-top: -120px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 50%;
+    margin: auto;
+
+    @include media-desktop {
+      width: 100%;
+    }
+  }
+
+  &__nav-info-container {
+    @include media-tablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    @include media-desktop {
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+
+    @include media-desktop {
+      justify-content: start;
+    }
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    background-color: #36373f;
+    border-radius: 50%;
+    margin-right: 16px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: #85868b;
+    }
+
+    &--active {
+      background-color: $white;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+    @include media-tablet {
+      width: 458px;
+      margin: auto;
+    }
+
+    @include media-desktop {
+      text-align: start;
+      width: fit-content;
+      margin: 0;
+    }
+  }
+
+  &__role {
+    @include bellefair;
+    text-transform: uppercase;
+    color: #929398;
+    margin-bottom: 8px;
+
+    @include media-tablet {
+      font-size: 24px;
+    }
+
+    @include media-desktop {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__name {
+    @include bellefair;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 24px;
+
+    @include media-tablet {
+      font-size: 40px;
+    }
+
+    @include media-desktop {
+      font-size: 56px;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__bio {
+    color: $light-blue;
+    font-size: 15px;
+    line-height: 2;
+
+    @include media-tablet {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    @include media-desktop {
+      font-size: 18px;
+      margin-bottom: 120px;
+      width: 444px;
+    }
+  }
+}

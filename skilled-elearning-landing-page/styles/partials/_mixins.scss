@@ -1,0 +1,86 @@
+@use "./variables" as *;
+
+@mixin headingXL {
+  font-family: "Plus-Jakarta-Sans-Extra-Bold";
+  font-size: 56px;
+  line-height: 70px;
+}
+
+@mixin headingL {
+  font-family: "Plus-Jakarta-Sans-Extra-Bold";
+  font-size: 40px;
+  line-height: 51px;
+}
+
+@mixin headingM {
+  font-family: "Plus-Jakarta-Sans-Extra-Bold";
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin headingS {
+  font-family: "Plus-Jakarta-Sans-Extra-Bold";
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin bodyM {
+  font-family: "Plus-Jakarta-Sans-Medium";
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin bodyS {
+  font-family: "Plus-Jakarta-Sans-Bold";
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@mixin orange-pink {
+  background: linear-gradient(#ff6f48, #f02aa6);
+}
+
+@mixin purple-pink {
+  background: linear-gradient(#4851ff, #f02aa6);
+}
+
+@mixin button {
+  @include bodyS;
+  cursor: pointer;
+  color: $white;
+  text-transform: capitalize;
+  width: 140px;
+  height: 48px;
+  border: none;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  @include media-desktop {
+    @include bodyM;
+    width: 167px;
+    height: 56px;
+  }
+}
+
+@mixin buttonMod {
+  width: 167px;
+  height: 56px;
+
+  @include media-desktop {
+    height: 63px;
+  }
+}
+
+@mixin media-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (min-width: 1110px) {
+    @content;
+  }
+}

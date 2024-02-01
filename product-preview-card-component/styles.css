@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  min-width: 320px;
+  padding: 20px 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color:white;
+  margin: 0 auto;
+  width: auto;
+  max-width: 335px;
+  min-width: 300px;
+  border-radius: 10px;
+}
+
+.image-main {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  width: 100%;
+}
+
+.image-main img{
+  border-radius: inherit;
+}
+
+.information {
+  padding: 25px 20px 10px 20px;
+}
+
+.information > *+* {
+  margin: 15px 0;
+}
+
+.product-name, .price-current {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+}
+
+.product-type {
+  color: hsl(228, 12%, 48%);
+}
+
+.product-description{
+  color: hsl(228, 12%, 48%);
+  line-height: 1.8;
+}
+
+.pricing {
+  margin: 0;
+  padding: 0;
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+}
+
+.price-current {
+  color: hsl(158, 36%, 37%);
+}
+
+.price-previous {
+  margin-left: 20px;
+  font-size: 1.4rem;
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1em;
+  color: white;
+  background-color: hsl(158, 36%, 37%);
+}
+
+button:active, button:hover {
+  background-color: hsl(158, 33%, 23%);
+  cursor: pointer;
+}
+
+.image-button {
+  margin-right: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media (min-width: 480px) {
+  body{
+    min-width: 700px;
+    padding: 20px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    width: 568px;
+    max-width: none;
+    min-width: none;
+    height: 426px;
+    margin-top: 10vh;
+  }
+
+  .image-main {
+    border-top-left-radius: inherit;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: inherit;
+    width: 284px;
+  }
+
+  .image-main img {
+    border-radius: inherit;
+    height: inherit;
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+    width: 284px;
+    padding: 30px;
+  }
+
+  .information > *+* {
+    margin: 10px 0;
+  }
+
+  .attribution{
+    display: inline-block;
+  }
+}

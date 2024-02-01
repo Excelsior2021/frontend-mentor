@@ -1,0 +1,47 @@
+@mixin headingL {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+@mixin headingM {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+@mixin headingS {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@mixin headingXS {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@mixin bodyM {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+@mixin bodyS {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+@mixin media-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-desktop-plus {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}

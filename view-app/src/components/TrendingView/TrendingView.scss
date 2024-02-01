@@ -1,0 +1,61 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.trending-view {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+
+  &__thumbnail {
+    border-radius: 8px;
+    width: 50vw;
+
+    @include media-tablet {
+      width: 40vw;
+    }
+
+    @include media-desktop {
+      width: 30vw;
+    }
+
+    @include media-desktop-plus {
+      width: 20vw;
+    }
+  }
+
+  &__bookmark-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-blue-translucent;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &__details {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 16px;
+
+    @include media-tablet {
+      padding: 24px;
+    }
+  }
+
+  &__play-modal {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
