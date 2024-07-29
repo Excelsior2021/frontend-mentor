@@ -1,14 +1,14 @@
 import View from "../View/View"
-import { videoObjectType } from "../../types/types"
+import type { videoObject } from "../../../types/types"
 import "./ViewList.scss"
 
-type viewListProps = {
-  list: videoObjectType[]
-  queryList?: videoObjectType[] | null
+type props = {
+  list: videoObject[]
+  queryList?: videoObject[] | null
   heading: string | null
 }
 
-const ViewList = ({ list, queryList, heading }: viewListProps) => (
+const ViewList = ({ list, queryList, heading }: props) => (
   <div className="view-list">
     <h2 className="view-list__heading">{heading}</h2>
     <ul className="view-list__views">

@@ -1,13 +1,13 @@
-import { videoObjectType } from "../../types/types"
+import type { videoObject } from "../../../types/types"
 import movie from "../../assets/images/icon-category-movie.svg"
 import tv from "../../assets/images/icon-category-tv.svg"
 import "./ViewDetails.scss"
 
-type viewDetailsType = {
-  view: videoObjectType
+type props = {
+  view: videoObject
 }
 
-const ViewDetails = ({ view }: viewDetailsType) => (
+const ViewDetails = ({ view }: props) => (
   <div className="view-details">
     <div className="view-details__details">
       <p className="view-details__detail">{view.year}</p>

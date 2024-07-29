@@ -4,15 +4,15 @@ import Toolbar from "./components/Toolbar/Toolbar"
 import Trending from "./components/TrendingList/TrendingList"
 import ViewList from "./components/ViewList/ViewList"
 import data from "./data/data.json"
-import { stateType, actionType } from "./types/types"
+import type { state, action } from "../types/types"
 
 const trending = data.filter(({ isTrending }) => isTrending)
 const recommendedData = data.filter(({ isTrending }) => !isTrending)
-const movies = data.filter(({ category }) => category.toLowerCase() === "movie")
-const tv = data.filter(({ category }) => category.toLowerCase() === "tv series")
+const movies = data.filter(({ category }) => category === "Movie")
+const tv = data.filter(({ category }) => category === "TV Series")
 const bookmarks = data.filter(({ isBookmarked }) => isBookmarked)
-const bookmarksMovies = movies.filter(({ isBookmarked }) => isBookmarked)
-const bookmarksTV = tv.filter(({ isBookmarked }) => isBookmarked)
+const bookmarkedMovies = movies.filter(({ isBookmarked }) => isBookmarked)
+const bookmarkedTV = tv.filter(({ isBookmarked }) => isBookmarked)
 
 const initialState = {
   trending,
@@ -25,7 +25,7 @@ const initialState = {
   queryViewList: null,
 }
 
-const viewsReducer = (state: stateType, action: actionType): stateType => {
+const viewsReducer = (state: state, action: action): state => {
   switch (action.type) {
     case "QUERY": {
       if (!action.query) {
@@ -103,10 +103,10 @@ const viewsReducer = (state: stateType, action: actionType): stateType => {
           placeholder = "search tv series"
           break
         case "bookmarks":
-          viewList = bookmarksMovies
+          viewList = bookmarkedMovies
           viewListHeading = "bookmarked movies"
           placeholder = "search bookmarked views"
-          viewListBookmarks = bookmarksTV
+          viewListBookmarks = bookmarkedTV
           viewListHeadingBookmarks = "bookmarked tv series"
           break
         default:

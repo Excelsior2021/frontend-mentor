@@ -1,14 +1,14 @@
 import BookmarkIcon from "../BookmarkIcon/BookmarkIcon"
 import PlayModal from "../PlayModal/PlayModal"
 import ViewDetails from "../ViewDetails/ViewDetails"
-import { videoObjectType } from "../../types/types"
+import type { videoObject } from "../../../types/types"
 import "./View.scss"
 
-type viewType = {
-  view: videoObjectType
+type props = {
+  view: videoObject
 }
 
-const View = ({ view }: viewType) => (
+const View = ({ view }: props) => (
   <li className="view">
     <div className="view__view">
       <div className="view__play-modal">

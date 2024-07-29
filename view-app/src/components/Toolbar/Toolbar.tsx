@@ -1,5 +1,5 @@
-import { useState, Dispatch } from "react"
-import { actionType } from "../../types/types"
+import { useState, type Dispatch } from "react"
+import type { action } from "../../../types/types"
 import logo from "../../assets/images/logo.svg"
 import home from "../../assets/images/icon-nav-home.svg"
 import movies from "../../assets/images/icon-nav-movies.svg"
@@ -8,8 +8,8 @@ import bookmarks from "../../assets/images/icon-nav-bookmark.svg"
 import avatar from "../../assets/images/image-avatar.png"
 import "./Toolbar.scss"
 
-type toolbarType = {
-  dispatch: Dispatch<actionType>
+type props = {
+  dispatch: Dispatch<action>
 }
 
 const navInitial = [
@@ -19,7 +19,7 @@ const navInitial = [
   { section: "bookmarks", icon: bookmarks, active: false },
 ]
 
-const Toolbar = ({ dispatch }: toolbarType) => {
+const Toolbar = ({ dispatch }: props) => {
   const [nav, setNav] = useState(navInitial)
 
   const handleChangeSection = (

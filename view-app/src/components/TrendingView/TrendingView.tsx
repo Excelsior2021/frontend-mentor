@@ -1,14 +1,14 @@
 import ViewDetails from "../ViewDetails/ViewDetails"
 import BookmarkIcon from "../BookmarkIcon/BookmarkIcon"
 import PlayModal from "../PlayModal/PlayModal"
-import { videoObjectType } from "../../types/types"
+import type { videoObject } from "../../../types/types"
 import "./TrendingView.scss"
 
-type trendingViewType = {
-  view: videoObjectType
+type props = {
+  view: videoObject
 }
 
-const TrendingView = ({ view }: trendingViewType) => (
+const TrendingView = ({ view }: props) => (
   <li className="trending-view">
     <div className="trending-view__play-modal">
       <PlayModal />

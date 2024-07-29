@@ -1,12 +1,12 @@
 import TrendingView from "../TrendingView/TrendingView"
-import { videoObjectType } from "../../types/types"
+import type { videoObject } from "../../../types/types"
 import "./TrendingList.scss"
 
-type trendingType = {
-  trending: videoObjectType[]
+type prop = {
+  trending: videoObject[]
 }
 
-const TrendingList = ({ trending }: trendingType) => (
+const TrendingList = ({ trending }: prop) => (
   <div className="trending-list">
     <h2 className="trending-list__heading">trending</h2>
     <ul className="trending-list__views">

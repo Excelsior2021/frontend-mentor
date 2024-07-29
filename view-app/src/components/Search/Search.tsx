@@ -1,15 +1,16 @@
 import { useState, Dispatch } from "react"
-import { actionType, videoObjectType } from "../../types/types"
 import search from "../../assets/images/icon-search.svg"
 import "./Search.scss"
 
-type searchType = {
-  dispatch: Dispatch<actionType>
+import type { action, videoObject } from "../../../types/types"
+
+type props = {
+  dispatch: Dispatch<action>
   placeholder: string
-  query: videoObjectType[] | null
+  query: videoObject[] | null
 }
 
-const Search = ({ dispatch, placeholder, query }: searchType) => {
+const Search = ({ dispatch, placeholder, query }: props) => {
   const [queryValue, setQueryValue] = useState("")
   return (
     <div className="search">
